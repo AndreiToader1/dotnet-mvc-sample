@@ -9,7 +9,7 @@ namespace WebApplication5.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-    private readonly string connectionString = "server=localhost;database=test;uid=postgres;pwd=Test123!";
+    private readonly string connectionString = "server=localhost;database=test;uid=postgres;pwd=";
 
     public HomeController(ILogger<HomeController> logger)
     {
