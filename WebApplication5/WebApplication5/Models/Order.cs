@@ -7,4 +7,6 @@ public class Order
     public string Name { get; set; }
     
     public int NumberOfProducts { get; set; }
+    
+    public string Feedback { get; set; }
 }
