@@ -29,13 +29,14 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult Submit(Order order)
     {
-        string sql = "INSERT INTO orders (id, name) VALUES (@id, @name)";
+        string sql = "INSERT INTO orders (id, name, numberofproducts) VALUES (@id, @name, @numberOfProducts)";
 
         using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
         using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
         {
             cmd.Parameters.AddWithValue("@id", order.Id);
             cmd.Parameters.AddWithValue("@name", order.Name);
+            cmd.Parameters.AddWithValue("@numberOfProducts", order.NumberOfProducts);
 
             conn.Open();
             cmd.ExecuteNonQuery();
